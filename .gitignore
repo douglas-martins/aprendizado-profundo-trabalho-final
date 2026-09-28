@@ -1,0 +1,45 @@
+# Python and environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mutmut-cache/
+.coverage
+coverage.xml
+junit.xml
+
+# Local AI configuration
+.agents/
+.claude/
+.pi/
+AGENTS.md
+CLAUDE.md
+
+# Local data and symlinks
+data/starcop_mini
+data/starcop_raw
+data/processed/starcop_mini
+data/processed/starcop_raw
+data/manifests/*
+!data/manifests/.gitkeep
+
+# Generated experiment outputs
+figures/*
+!figures/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep
+logs/*
+!logs/.gitkeep
+patch_cache/*
+!patch_cache/.gitkeep
+run_state/*
+!run_state/.gitkeep
+scene_scores/*
+!scene_scores/.gitkeep
+mutants/
+
+# Local credentials and scratch files
+.env
+.env.*
+.DS_Store

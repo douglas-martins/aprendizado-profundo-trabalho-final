@@ -1,0 +1,11 @@
+dataset: starcop_raw
+paths:
+  raw_root: data/starcop_raw
+  processed_root: data/processed/starcop_raw
+dataset_cfg:
+  input_products: [mag1c, TOA_AVIRIS_640nm, TOA_AVIRIS_550nm, TOA_AVIRIS_460nm]
+  output_products: [labelbinary]
+  train_csv: train.csv
+  test_csv: test.csv
+patch:
+  num_workers: 4
