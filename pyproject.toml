@@ -1,0 +1,122 @@
+[project]
+name = "aprendizado-profundo-trabalho-final"
+version = "0.1.0"
+description = "Implementação do trabalho final da disciplina de Aprendizado Profundo"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "kornia==0.8.3",
+    "matplotlib==3.11.0",
+    "mlflow==3.14.0",
+    "numpy==2.5.1",
+    "pandas==2.3.3",
+    "omegaconf==2.3.1",
+    "rasterio==1.5.0",
+    "segmentation-models-pytorch==0.5.0",
+    "torch==2.12.1",
+]
+
+[dependency-groups]
+dev = [
+    "interrogate==1.7.0",
+    "mutmut==3.8.0",
+    "pytest==9.1.1",
+    "pytest-cov",
+    "ruff==0.16.2",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["src", "tests"]
+python_files = ["test_*.py"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.interrogate]
+exclude = ["*/__tests__/*", ".venv", "mutants"]
+ignore-private = true
+ignore-magic = true
+ignore-nested-functions = true
+fail-under = 80
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+skip_empty = true
+exclude_also = [
+    "if __name__ == .__main__.:",
+]
+omit = [
+    "*/__tests__/*",
+    "*/conftest.py",
+    "*/confirm_raw.py",
+    "*/build_r2_manifest.py",
+    "*/precompute_patch_cache.py",
+]
+
+[tool.mutmut]
+source_paths = ["src"]
+also_copy = [
+    "_mutmut_pytest_plugin.py",
+    "conftest.py",
+    "configs",
+]
+only_mutate = [
+    "src/data/data_quality.py",
+    "src/data/dataset.py",
+    "src/data/patch_cache.py",
+    "src/data/precompute_patch_cache.py",
+    "src/data/preprocessing.py",
+    "src/data/sampling.py",
+    "src/data/scene_manifest.py",
+    "src/evaluation/evaluate.py",
+    "src/evaluation/evaluate_scenes.py",
+    "src/evaluation/metrics.py",
+    "src/evaluation/paper_protocol.py",
+    "src/evaluation/scene_checks.py",
+    "src/evaluation/scene_inference.py",
+    "src/evaluation/threshold_calibration.py",
+    "src/evaluation/threshold_selection.py",
+    "src/models/architectures.py",
+    "src/models/losses.py",
+    "src/training/early_stopping.py",
+    "src/training/train.py",
+    "src/training/train_with_recovery.py",
+    "src/utils/power_meter.py",
+    "src/visualization/architecture_diagram.py",
+    "src/visualization/class_balance.py",
+    "src/visualization/eda.py",
+    "src/visualization/efficiency_plot.py",
+    "src/visualization/figure_common.py",
+    "src/visualization/pr_curve_plots.py",
+    "src/visualization/qualitative_predictions.py",
+    "src/visualization/threshold_effect_plot.py",
+    "src/visualization/training_curves.py",
+]
+pytest_add_cli_args = ["-p", "_mutmut_pytest_plugin"]
+mutate_only_covered_lines = true
+max_stack_depth = 2
+timeout_multiplier = 25
+do_not_mutate = [
+    "*/__tests__/*",
+    "*/conftest.py",
+    "src/data/confirm_raw.py",
+    "src/data/build_r2_manifest.py",
+]
+pytest_add_cli_args_test_selection = [
+    "src/data/__tests__",
+    "src/evaluation/__tests__",
+    "src/models/__tests__",
+    "src/training/__tests__",
+    "src/utils/__tests__",
+    "src/visualization/__tests__",
+]

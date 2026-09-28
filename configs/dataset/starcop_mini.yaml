@@ -1,0 +1,9 @@
+dataset: starcop_mini
+paths:
+  raw_root: data/starcop_mini
+  processed_root: data/processed/starcop_mini
+dataset_cfg:
+  input_products: [mag1c, TOA_AVIRIS_640nm, TOA_AVIRIS_550nm, TOA_AVIRIS_460nm]
+  output_products: [labelbinary]
+  train_csv: train_mini10.csv
+  test_csv: test_mini10.csv

@@ -1,0 +1,4 @@
+patch:
+  size: [128, 128]
+  overlap: [64, 64]
+  has_plume_threshold: 0.00244

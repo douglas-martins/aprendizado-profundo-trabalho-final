@@ -1,0 +1,4 @@
+/starcop_mini
+/starcop_raw
+/manifests/*
+!/manifests/.gitkeep

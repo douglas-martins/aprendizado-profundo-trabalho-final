@@ -1,0 +1,23 @@
+artifact_path: /Users/ghostface/Projects/mestrado/aprendizado-profundo-trabalho-final/mlruns/1/models/m-93452d8e83ce40ed85974e1cb44d99cd/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.12.14
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.12.1+cu130
+mlflow_version: 3.14.0
+model_id: m-93452d8e83ce40ed85974e1cb44d99cd
+model_size_bytes: 2545
+model_uuid: m-93452d8e83ce40ed85974e1cb44d99cd
+prompts: null
+run_id: 21bf1670f46f4697a8ea0b2b6a4850d8
+utc_time_created: '2026-09-06 18:53:24.975382'
