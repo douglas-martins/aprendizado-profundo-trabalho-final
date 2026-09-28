@@ -5,6 +5,7 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .mutmut-cache/
+_mutmut_pytest_plugin.py
 .coverage
 coverage.xml
 junit.xml
